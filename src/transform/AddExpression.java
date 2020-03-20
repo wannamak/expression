@@ -116,7 +116,7 @@ public class AddExpression {
     String content = Files.toString(config.outputXml, UTF_8);
     content = content.replaceAll("o><o", "o>" + System.lineSeparator() + "<o");
     // Reposition the existing swell pedal slightly right.
-    content = content.replaceAll("<g>508</g>", "<g>518</g>");
+    content = content.replaceAll("<g>508</g>", "<g>523</g>");
     Files.write(content, config.outputXml, UTF_8);
   }
 

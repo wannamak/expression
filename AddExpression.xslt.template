@@ -27,14 +27,14 @@ ENCLOSURE_PIPE_DATA
      <xsl:copy>
         <xsl:copy-of select="@*|o"/>
         <xsl:text>&#10;</xsl:text>
-        <!-- the pedal is 54 pixels in width.  The swell pedal is at x=508 -->
+        <!-- the pedal is 54 pixels in width.  The swell pedal is at x=508 + 15 -->
         <!-- we're using the same ImageSetId (second column) -->
         <!-- g is X and h is Y -->
-        <!-- 464 = 508 - 54 + 10 -->
+        <!-- 469 = 508 - 54 + 15 -->
         <!-- See java for where the existing pedal is shifted right 10px -->
-        <o><a>199</a><c>99</c><e>1</e><b>Positif Mask</b><g>464</g><h>432</h></o>
+        <o><a>199</a><c>99</c><e>1</e><b>Positif Mask</b><g>469</g><h>432</h></o>
         <xsl:text>&#10;</xsl:text>
-        <o><a>200</a><c>100</c><e>1</e><b>Positif Pedal</b><g>464</g><h>432</h></o>
+        <o><a>200</a><c>100</c><e>1</e><b>Positif Pedal</b><g>469</g><h>432</h></o>
         <xsl:text>&#10;</xsl:text>
      </xsl:copy>
    </xsl:template>
