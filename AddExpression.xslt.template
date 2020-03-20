@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+   <xsl:preserve-space elements="o" />
+   <xsl:template match="@* | node()" name="identity">
+      <xsl:copy>
+         <xsl:apply-templates select="@* | node()"/>
+      </xsl:copy>
+   </xsl:template>
+
+   <xsl:template match="ObjectList[@ObjectType='Enclosure']">
+     <xsl:copy>
+        <xsl:copy-of select="@*|o"/>
+        <xsl:text>&#10;</xsl:text>
+        <o><a>2</a><c>500</c><b>Positif Expressif</b></o>
+        <xsl:text>&#10;</xsl:text>
+     </xsl:copy>
+   </xsl:template>
+
+   <xsl:template match="ObjectList[@ObjectType='EnclosurePipe']">
+     <xsl:copy>
+       <xsl:copy-of select="@*|o"/>
+ENCLOSURE_PIPE_DATA
+     </xsl:copy>
+   </xsl:template>
+
+   <xsl:template match="ObjectList[@ObjectType='ImageSetInstance']">
+     <xsl:copy>
+        <xsl:copy-of select="@*|o"/>
+        <xsl:text>&#10;</xsl:text>
+        <!-- the pedal is 54 pixels in width.  The swell pedal is at x=508 -->
+        <!-- we're using the same ImageSetId (second column) -->
+        <!-- g is X and h is Y -->
+        <!-- 464 = 508 - 54 + 10 -->
+        <!-- See java for where the existing pedal is shifted right 10px -->
+        <o><a>199</a><c>99</c><e>1</e><b>Positif Mask</b><g>464</g><h>432</h></o>
+        <xsl:text>&#10;</xsl:text>
+        <o><a>200</a><c>100</c><e>1</e><b>Positif Pedal</b><g>464</g><h>432</h></o>
+        <xsl:text>&#10;</xsl:text>
+     </xsl:copy>
+   </xsl:template>
+
+   <xsl:template match="ObjectList[@ObjectType='ContinuousControl']">
+     <xsl:copy>
+        <xsl:copy-of select="@*|o"/>
+        <o><a>4</a><j>200</j><b>Positif Box</b><f>127</f></o>
+        <xsl:text>&#10;</xsl:text>
+        <o><a>3</a><c>199</c><j>199</j><d>Y</d><e>Y</e><g>Y</g><h>Y</h><i>Y</i><b>Positif Expressif</b><f>127</f></o>
+        <xsl:text>&#10;</xsl:text>
+        <o><a>500</a><e>Y</e><b>Positif Shutters</b><f>127</f></o>
+        <xsl:text>&#10;</xsl:text>
+     </xsl:copy>
+   </xsl:template>
+
+   <xsl:template match="ObjectList[@ObjectType='ContinuousControlLinkage']">
+     <xsl:copy>
+        <xsl:copy-of select="@*|o"/>
+        <o><a>3</a><b>4</b><d>3</d><c>Visual Positif Pedal Inertia Linkage</c><f>2.3e+1</f><g>4</g></o>
+        <xsl:text>&#10;</xsl:text>
+        <o><a>3</a><b>500</b><d>3</d><c>Positif Box Inertia Linkage</c><f>2.3e+1</f><g>4</g></o>
+        <xsl:text>&#10;</xsl:text>
+        <!-- TODO: currently using existing DestControlID 22010 -->
+        <o><a>500</a><b>22010</b><c>box shutter mvmt noise 1</c><k>6.35e+1</k><l>5e-1</l></o>
+        <xsl:text>&#10;</xsl:text>
+     </xsl:copy>
+   </xsl:template>
+
+</xsl:stylesheet>
