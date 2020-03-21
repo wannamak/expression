@@ -63,6 +63,7 @@ public class AddExpression {
     }
     generateStylesheet();
     transformXml();
+    postProcess();
     System.out.printf("Generated %s\n", config.outputXml.getAbsolutePath());
   }
 
@@ -111,10 +112,13 @@ public class AddExpression {
 
     Source text = new StreamSource(config.inputXml);
     transformer.transform(text, new StreamResult(config.outputXml));
+  }
 
-    // (ducks).. some things are easier to do by hand...
+  // (ducks).. some things are easier to do outside XSLT.
+  private void postProcess() throws IOException {
     String content = Files.toString(config.outputXml, UTF_8);
-    content = content.replaceAll("o><o", "o>" + System.lineSeparator() + "<o");
+    // Someone somewhere knows how to preserve linefeeds in XSLT.
+    content = content.replaceAll("><o", ">" + System.lineSeparator() + "<o");
     // Reposition the existing swell pedal slightly right.
     content = content.replaceAll("<g>508</g>", "<g>523</g>");
     Files.write(content, config.outputXml, UTF_8);
