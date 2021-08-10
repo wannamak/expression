@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" translate="no">
+<html lang="en" class="notranslate" translate="no">
 <head>
+  <meta name="google" content="notranslate">
   <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en" />
   <title>Notre-Dame de l'Assomption, Metz</title>
 </head>
 <style>
@@ -23,16 +25,25 @@
   div.left-jamb {
   }
 
-  div.rockers {
+  div.rockers-column {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     padding-left: 10px;
     padding-right: 10px;
   }
 
+  div.rockers-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+
   div.right-jamb {
-    border: 1px solid yellow;
   }
 
   /* End major page divisions */
@@ -95,8 +106,8 @@
     border: 2px solid black;
   }
 
-  div.rocker-gap {
-    width: 25px;
+  div.ventil-controlled div.knob-text span {
+    color: red;
   }
 
 </style>
@@ -113,7 +124,7 @@
     </div>
 
     <!-- Pedale -->
-    <div style="grid-column: 1" class="knob">
+    <div style="grid-column: 1" class="knob ventil-controlled">
       <div class="knob-text">
         <span>TROMPETTE</span>
         <span class="pitch">8</span>
@@ -121,7 +132,7 @@
     </div>
 
     <!-- Recit -->
-    <div style="grid-column: 3" class="knob">
+    <div style="grid-column: 3" class="knob ventil-controlled">
       <div class="knob-text">
         <span>CLAIRON</span>
         <span>HARMON.</span>
@@ -129,7 +140,7 @@
       </div>
     </div>
 
-    <div style="grid-column: 5" class="knob">
+    <div style="grid-column: 5" class="knob ventil-controlled">
       <div class="knob-text">
         <span>TROMPETTE</span>
         <span class="pitch">8</span>
@@ -137,7 +148,7 @@
     </div>
 
     <!-- Pedale -->
-    <div style="grid-column: 2" class="knob">
+    <div style="grid-column: 2" class="knob ventil-controlled">
       <div class="knob-text">
         <span>BOMBARDE</span>
         <span class="pitch">16</span>
@@ -163,7 +174,7 @@
     </div>
 
     <!-- Pedale -->
-    <div style="grid-column: 1" class="knob">
+    <div style="grid-column: 1" class="knob ventil-controlled">
       <div class="knob-text">
         <span>CONTRE</span>
         <span>BOMBARDE</span>
@@ -172,14 +183,14 @@
     </div>
 
     <!-- Recit -->
-    <div style="grid-column: 3" class="knob">
+    <div style="grid-column: 3" class="knob ventil-controlled">
       <div class="knob-text">
         <span>PLEIN JEU</span>
         <span>4 Rangs</span>
       </div>
     </div>
 
-    <div style="grid-column: 5" class="knob">
+    <div style="grid-column: 5" class="knob ventil-controlled">
       <div class="knob-text">
         <span>BASSON</span>
         <span class="pitch">16</span>
@@ -196,14 +207,14 @@
     </div>
 
     <!-- Recit -->
-    <div style="grid-column: 4" class="knob">
+    <div style="grid-column: 4" class="knob ventil-controlled">
       <div class="knob-text">
         <span>CORNET</span>
         <span>5 RANGS</span>
       </div>
     </div>
 
-    <div style="grid-column: 6" class="knob">
+    <div style="grid-column: 6" class="knob ventil-controlled">
       <div class="knob-text">
         <span>OCTAVIN</span>
         <span class="pitch">2</span>
@@ -303,123 +314,121 @@
 
   </div>
 
-  <div class="rockers">
+  <div class="rockers-column">
 
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>G. O.</span>
-        <span>P&eacute;d</span>
+    <div class="rockers-row">
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>G. O.</span>
+          <span>P&eacute;d</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Pos</span>
+          <span>P&eacute;d</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>R&eacute;c</span>
+          <span>P&eacute;d</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span style="color: red;">Comb</span>
+          <span style="color: red;">P&eacute;d</span>
+        </div>
       </div>
     </div>
 
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Pos</span>
-        <span>P&eacute;d</span>
+    <div class="rockers-row">
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Unison</span>
+          <span>G. O.</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Sub</span>
+          <span>G. O.</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>R&eacute;c</span>
+          <span>G. O.</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Sub</span>
+          <span>R&eacute;c</span>
+          <span>G. O.</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Pos</span>
+          <span>G. O.</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span style="color: red;">Comb</span>
+          <span style="color: red;">G. O.</span>
+        </div>
       </div>
     </div>
 
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>R&eacute;c</span>
-        <span>P&eacute;d</span>
+    <div class="rockers-row">
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>R&eacute;c</span>
+          <span>Pos</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span style="color: red;">Comb</span>
+          <span style="color: red;">Pos</span>
+        </div>
       </div>
     </div>
 
-    <div class="rocker">
-      <div class="rocker-text">
-        <span style="color: red;">Comb</span>
-        <span style="color: red;">P&eacute;d</span>
+    <div class="rockers-row">
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Unison</span>
+          <span>R&eacute;c</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span>Super</span>
+          <span>R&eacute;c</span>
+        </div>
+      </div>
+
+      <div class="rocker">
+        <div class="rocker-text">
+          <span style="color: red;">Comb</span>
+          <span style="color: red;">R&eacute;c</span>
+        </div>
       </div>
     </div>
-
-    <div class="rocker-gap">
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Unison</span>
-        <span>G. O.</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Super</span>
-        <span>G. O.</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>R&eacute;c</span>
-        <span>G. O.</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>R&eacute;c</span>
-        <span>G. O.</span>
-        <span>Super</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Pos</span>
-        <span>G. O.</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span style="color: red;">Comb</span>
-        <span style="color: red;">G. O.</span>
-      </div>
-    </div>
-
-    <div class="rocker-gap">
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>R&eacute;c</span>
-        <span>Pos</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span style="color: red;">Comb</span>
-        <span style="color: red;">Pos</span>
-      </div>
-    </div>
-
-    <div class="rocker-gap">
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Unison</span>
-        <span>R&eacute;c</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span>Super</span>
-        <span>R&eacute;c</span>
-      </div>
-    </div>
-
-    <div class="rocker">
-      <div class="rocker-text">
-        <span style="color: red;">Comb</span>
-        <span style="color: red;">R&eacute;c</span>
-      </div>
-    </div>
-
   </div>
 
   <div class="jamb right-jamb">
@@ -457,23 +466,179 @@
     <!-- Positif -->
     <div style="grid-column: 1" class="knob">
       <div class="knob-text">
-        <span>TROMPETTE</span>
+        <span>BASSON</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 3" class="knob">
+      <div class="knob-text">
+        <span>BASSON</span>
+        <span class="pitch">16</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 5" class="knob">
+      <div class="knob-text">
+        <span>BOMBARDE</span>
+        <span class="pitch">16</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 2" class="knob">
+      <div class="knob-text">
+        <span>PICCOLO</span>
+        <span class="pitch">1</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 4" class="knob">
+      <div class="knob-text">
+        <span>PLEIN JEU</span>
+        <span>3 Rangs</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 6" class="knob">
+      <div class="knob-text">
+        <span>DOUBLETTE</span>
+        <span class="pitch">2</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 1" class="knob">
+      <div class="knob-text">
+        <span>DOUBLETTE</span>
+        <span class="pitch">2</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 3" class="knob">
+      <div class="knob-text">
+        <span>TIERCE</span>
+        <span class="pitch">1 3/5</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 5" class="knob">
+      <div class="knob-text">
+        <span>QUINTE</span>
+        <span class="pitch">2 2/3</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 2" class="knob">
+      <div class="knob-text">
+        <span>NAZARD</span>
+        <span class="pitch">2 2/3</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 4" class="knob">
+      <div class="knob-text">
+        <span>FL&Ucirc;TE</span>
+        <span>DOUCE</span>
+        <span class="pitch">4</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 6" class="knob">
+      <div class="knob-text">
+        <span>PRESTANT</span>
+        <span class="pitch">4</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 1" class="knob">
+      <div class="knob-text">
+        <span>PRESTANT</span>
+        <span class="pitch">4</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 3" class="knob">
+      <div class="knob-text">
+        <span>FL&Ucirc;TE</span>
+        <span>DOUCE</span>
+        <span class="pitch">4</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 5" class="knob">
+      <div class="knob-text">
+        <span>MONTRE</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 2" class="knob">
+      <div class="knob-text">
+        <span>UNDA MARIS</span>
         <span class="pitch">8</span>
       </div>
     </div>
 
     <!-- Grand-Orgue -->
-    <div style="grid-column: 3" class="knob">
+    <div style="grid-column: 4" class="knob">
       <div class="knob-text">
-        <span>CLAIRON</span>
-        <span class="pitch">4</span>
+        <span>BOURDON</span>
+        <span class="pitch">8</span>
       </div>
     </div>
 
+    <div style="grid-column: 6" class="knob">
+      <div class="knob-text">
+        <span>FL&Ucirc;TE HARMON.</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 1" class="knob">
+      <div class="knob-text">
+        <span>COR <span style="display: inline; font-size: 9px;">DE</span> NUIT</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <div style="grid-column: 3" class="knob">
+      <div class="knob-text">
+        <span>SALICIONAL</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
     <div style="grid-column: 5" class="knob">
       <div class="knob-text">
-        <span>TROMPETTE</span>
+        <span>GAMBE</span>
         <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <!-- Positif -->
+    <div style="grid-column: 2" class="knob">
+      <div class="knob-text">
+        <span>PRINCIPAL</span>
+        <span class="pitch">8</span>
+      </div>
+    </div>
+
+    <!-- Grand-Orgue -->
+    <div style="grid-column: 4" class="knob">
+      <div class="knob-text">
+        <span>BOURDON</span>
+        <span class="pitch">16</span>
       </div>
     </div>
 
