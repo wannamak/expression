@@ -23,6 +23,7 @@
   /* Begin major page divisions */
 
   div.left-jamb {
+    grid-template-rows: repeat(8, [row] 100px);
   }
 
   div.rockers-column {
@@ -44,6 +45,7 @@
   }
 
   div.right-jamb {
+    grid-template-rows: repeat(9, [row] 100px);
   }
 
   /* End major page divisions */
@@ -68,7 +70,6 @@
   div.jamb {
     display: grid;
     grid-template-columns: repeat(6, [col] 100px);
-    grid-template-rows: repeat(6, [row] auto);
     grid-gap: 0;
     padding-left: 5px;
     padding-right: 5px;
