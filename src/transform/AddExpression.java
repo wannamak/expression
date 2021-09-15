@@ -127,7 +127,7 @@ public class AddExpression {
   private class Config {
     private static final String OUTPUT_XSLT_FILENAME = "generated.xslt";
     private static final String OUTPUT_XML_EXTENSION = ".Organ_Hauptwerk_xml";
-    private static final String DEFAULT_JDBC_URL = "jdbc:mysql://192.168.1.8:3306/db_conn?user=root&password=sqlpassword";
+    private static final String DEFAULT_JDBC_URL = "jdbc:mysql://localhost:3306/db_conn?user=root&password=sqlpassword";
 
     private final File inputXml;
     private final File outputXml;
