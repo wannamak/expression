@@ -77,29 +77,44 @@
   </xsl:template>
 
   <!--
-   a: ExternalRankID, c: PipeGen_GeneratePipesAutomatically,
-   d: PipeGen_MIDINoteNumOfFirstPipe (56=tenor A), e: PipeGen_NumberOfPipes
-  -->
+   a: ExternalRankID, b: Name, c: PipeGen_GeneratePipesAutomatically,
+   d: PipeGen_MIDINoteNumOfFirstPipe (57=tenor A, 36=C), e: PipeGen_NumberOfPipes
+   -->
   <xsl:template match="ObjectList[@ObjectType='ExternalRank']">
     <xsl:copy>
       <xsl:copy-of select="@*|o"/>
       <xsl:text>&#10;</xsl:text>
-      <o><a>10000</a><b>20-Grand Orgue: 14-Cloches</b><e>21</e><d>56</d></o>
+      <o><a>10001</a><b>Cloches</b><c>Y</c><d>36</d><e>56</e></o>
       <xsl:text>&#10;</xsl:text>
     </xsl:copy>
   </xsl:template>
 
   <!--
    a: StopID, c: DivisionID, d: ControllingSwitchID
-    -->
+  -->
   <xsl:template match="ObjectList[@ObjectType='Stop']">
     <xsl:copy>
       <xsl:copy-of select="@*|o"/>
       <xsl:text>&#10;</xsl:text>
-      <o><a>10000</a><c>2</c><d>20000</d><b>GO Cloches</b></o>
+      <o><a>10000</a><c>2</c><d>20000</d><b>Cloches</b></o>
       <xsl:text>&#10;</xsl:text>
     </xsl:copy>
   </xsl:template>
+
+
+  <!--
+   a: StopID, b: Name, c: RankTypeCode, e: ExternalRankId,
+   f: ActionTypeCode, g: ActionEffectCode, i: NumberOfMappedDivisionInputNodes
+   -->
+  <xsl:template match="ObjectList[@ObjectType='StopRank']">
+    <xsl:copy>
+      <xsl:copy-of select="@*|o"/>
+      <xsl:text>&#10;</xsl:text>
+      <o><a>10000</a><b>Cloches</b><c>2</c><e>10001</e><f>1</f><g>1</g><i>56</i></o>
+      <xsl:text>&#10;</xsl:text>
+    </xsl:copy>
+  </xsl:template>
+
 
   <!--
    a: CombinationElementID, b: CombinationID, c: ControlledSwitchID, d: CapturedSwitchID
